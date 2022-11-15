@@ -1,0 +1,14 @@
+<h1>Todo</h1>
+<div class= "checkboxes container">
+  <ul>
+    <% @tasks.each do |task| %>
+    <% if task.completed == true %>
+     <li class="lien"> <input type="checkbox" checked ><%= link_to task.title, task_path(task) %></li>
+    <% else %>
+      <li class="lien"> <input type="checkbox"><%= link_to task.title, task_path(task) %></li>
+    <% end %>
+  <% end %>
+  </ul>
+  <%= link_to "New task", tasks_new_path, class: "btn btn-primary" %>
+  </div>
+</div>
